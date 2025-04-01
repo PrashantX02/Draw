@@ -43,6 +43,11 @@ Here’s a quick example of how to use **Draw** in your project:
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+// Kotlin code
+
+drawingView.brushColour(R.color.purple_500)
+drawingView.brushSize(5f)
 ---
 
 ## 📜 License
