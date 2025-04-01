@@ -25,21 +25,20 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
-// 🔥 **Fix for JitPack: Ensure components["release"] exists**
 afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                from(components.findByName("release") ?: error("Release component not found!"))
+                from(components["release"])
                 groupId = "com.github.PrashantX02"
                 artifactId = "clibrary"
                 version = "1.0.0"
